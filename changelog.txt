@@ -1,0 +1,2 @@
+--sebastian
+	Elimine cosas del tp2 parte 1 y le cambie el nombre al proyecto, agrego archivo changelog para seguir mejor los cambios.
