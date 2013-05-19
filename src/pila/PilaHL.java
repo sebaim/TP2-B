@@ -7,13 +7,13 @@ public class PilaHL<T> extends Lista<T> implements PilaInterface<T> {
 	@Override
 	public T peek() {
 		
-		return super.mostrar_primero();
+		return mostrar_primero();
 	}
 
 	@Override
 	public T pop() {
 
-		T dato = this.pop_front();
+		T dato = pop_front();
 		
 		return dato;
 	}
@@ -21,7 +21,7 @@ public class PilaHL<T> extends Lista<T> implements PilaInterface<T> {
 	@Override
 	public void push(T dato) {
 		
-		this.push_front(dato);
+		push_front(dato);
 	}
 
 	@Override
