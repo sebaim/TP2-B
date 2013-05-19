@@ -35,7 +35,7 @@ public class Lista<T> {
 	}
 
 	/*
-	 * Elimina un elmento del final
+	 * Elimina un elemento del final
 	 */
 	public T pop_back() {
 
@@ -250,34 +250,43 @@ public class Lista<T> {
 		}
 	}
 
-	// public T buscar(int pos) {
-	//
-	// Nodo<T> aux = lista;
-	// int i = 1;
-	//
-	// while (i < pos && aux != null) {
-	//
-	// i++;
-	// aux = aux.getSiguiente();
-	// }
-	//
-	// if (aux == null) {
-	//
-	// return null;
-	// }
-	//
-	// if (i > pos) {
-	//
-	// return null;
-	// }
-	//
-	// if (i == pos) {
-	//
-	// return aux.getData();
-	// }
-	//
-	// return null;
-	// }
+	/*
+	 * Busca un nodo por la posicion "pos" pasada por parametro,
+	 * y devuelve el dato que contiene. 
+	 */
+	public T buscar(int pos) {
+
+		// Lista vacia
+		if( this.empty()){
+			
+			return null;
+		}
+		
+		Nodo<T> aux = primero;
+		int i = 1;
+
+		// Recorro la lista, hasta llegar al final o a una posicion
+		// mayor a la buscada
+		while (i < pos && aux != null) {
+
+			i++;
+			aux = aux.getSiguiente();
+		}
+
+		// Si se llego al final de la lista
+		if (aux == null) {
+
+			return null;
+		}
+
+		// Se encontro la posicion en la lista
+		if (i == pos) {
+
+			return aux.getData();
+		}
+
+		return null;
+	}
 
 	/*
 	 * Vacia la lista
