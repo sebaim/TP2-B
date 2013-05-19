@@ -86,19 +86,19 @@ public class Lista<T> {
 			nuevo.setSiguiente(null);
 			primero = nuevo;
 			ultimo = nuevo;
-			
+
 			return;
 		}
-		
+
 		// La lista tiene un elemento
-		if ( primero == ultimo){
-			
+		if (primero == ultimo) {
+
 			primero = nuevo;
 			nuevo.setSiguiente(ultimo);
-			
+
 			return;
 		}
-		
+
 		// La lista tiene mas de un elemento
 		nuevo.setSiguiente(primero);
 		primero = nuevo;
@@ -110,15 +110,15 @@ public class Lista<T> {
 	 */
 	public T pop_front() {
 
-		// Si la lista está vacía		
+		// Si la lista está vacía
 		if (primero == null) {
 
 			return null;
 		}
-		
+
 		// Si la lista tiene un elemento
-		if( primero == ultimo){
-			
+		if (primero == ultimo) {
+
 			ultimo = null;
 			T retorno = primero.getData();
 			primero = null;
@@ -127,177 +127,166 @@ public class Lista<T> {
 
 		// La lista tiene mas de un elemento
 		T retorno = primero.getData();
-		primero = primero.getSiguiente();		
+		primero = primero.getSiguiente();
 		return retorno;
 	}
 
-//	/*
-//	 * Elimina un elemento de un valor determinado.
-//	 */
-//	public boolean remove(T dato) {
-//
-//		Nodo<T> aux = lista;
-//		Nodo<T> ultimo = aux;
-//
-//		while (aux != null && aux.getSiguiente() != null
-//				&& !dato.equals(aux.getData())) {
-//
-//			ultimo = aux;
-//			aux = aux.getSiguiente();
-//		}
-//
-//		// Lista vacia
-//		if (lista == null) {
-//
-//			return false;
-//		}
-//
-//		// Se llego al final de lista sin encontrarlo
-//		if (aux == null) {
-//
-//			return false;
-//		}
-//
-//		// Se encontro el dato
-//		if (dato.equals(aux.getData())) {
-//
-//			// si es el primero de la lista
-//			if (ultimo == aux) {
-//
-//				lista = ultimo.getSiguiente();
-//			} else {
-//				ultimo.setSiguiente(aux.getSiguiente());
-//			}
-//			return true;
-//		}
-//
-//		return false;
-//	}
-//
-//	/*
-//	 * invierte el orden de los elementos en la lista
-//	 */
-//	// public void reverse(){
-//	//
-//	//
-//	// }
-//
-//	// insert(posición, dato )//insertar
-//
-//	/*
-//	 * Eliminar por posición
-//	 */
-//	// public boolean erase(int pos){
-//	//
-//	// Nodo<T> aux = lista;
-//	// Nodo<T> anterior = aux;
-//	// int i = 1;
-//	//
-//	// while ( aux != null && i < pos){
-//	//
-//	// i++;
-//	// anterior = aux;
-//	// aux = aux.getSiguiente();
-//	// }
-//	//
-//	// if ( i == pos && aux != null){
-//	//
-//	// anterior.setSiguiente(aux.getSiguiente());
-//	// return true;
-//	// }
-//	//
-//	// return false;
-//	// }
-//
-//	public boolean empty() {
-//
-//		return this.lista == null;
-//	}
-//
-//	public int buscar(T dato) {
-//
-//		Nodo<T> aux = lista;
-//		int i = 1;
-//
-//		while (aux != null && !dato.equals(aux.getData())) {
-//
-//			aux = aux.getSiguiente();
-//			i++;
-//		}
-//
-//		if (aux == null) {
-//
-//			return -1;
-//
-//		} else {
-//
-//			return i;
-//		}
-//	}
-//
-//	public T buscar(int pos) {
-//
-//		Nodo<T> aux = lista;
-//		int i = 1;
-//
-//		while (i < pos && aux != null) {
-//
-//			i++;
-//			aux = aux.getSiguiente();
-//		}
-//
-//		if (aux == null) {
-//
-//			return null;
-//		}
-//
-//		if (i > pos) {
-//
-//			return null;
-//		}
-//
-//		if (i == pos) {
-//
-//			return aux.getData();
-//		}
-//
-//		return null;
-//	}
-//
-//	public void vaciar() {
-//
-//		lista = null;
-//	}
-//
-//	public T ver_primero() {
-//
-//		if (lista != null) {
-//
-//			return lista.getData();
-//		} else {
-//
-//			return null;
-//		}
-//	}
-//
-//	public T ver_ultimo() {
-//
-//		Nodo<T> aux = lista;
-//		Nodo<T> ultimo = aux;
-//
-//		while (aux != null) {
-//
-//			ultimo = aux;
-//			aux = aux.getSiguiente();
-//		}
-//
-//		if (lista == null) {
-//
-//			return null;
-//		}
-//
-//		return ultimo.getData();
-//	}
+	// /*
+	// * Elimina un elemento de un valor determinado.
+	// */
+	// public boolean remove(T dato) {
+	//
+	// Nodo<T> aux = lista;
+	// Nodo<T> ultimo = aux;
+	//
+	// while (aux != null && aux.getSiguiente() != null
+	// && !dato.equals(aux.getData())) {
+	//
+	// ultimo = aux;
+	// aux = aux.getSiguiente();
+	// }
+	//
+	// // Lista vacia
+	// if (lista == null) {
+	//
+	// return false;
+	// }
+	//
+	// // Se llego al final de lista sin encontrarlo
+	// if (aux == null) {
+	//
+	// return false;
+	// }
+	//
+	// // Se encontro el dato
+	// if (dato.equals(aux.getData())) {
+	//
+	// // si es el primero de la lista
+	// if (ultimo == aux) {
+	//
+	// lista = ultimo.getSiguiente();
+	// } else {
+	// ultimo.setSiguiente(aux.getSiguiente());
+	// }
+	// return true;
+	// }
+	//
+	// return false;
+	// }
+	//
+	// /*
+	// * invierte el orden de los elementos en la lista
+	// */
+	// // public void reverse(){
+	// //
+	// //
+	// // }
+	//
+	// // insert(posición, dato )//insertar
+	//
+	// /*
+	// * Eliminar por posición
+	// */
+	// // public boolean erase(int pos){
+	// //
+	// // Nodo<T> aux = lista;
+	// // Nodo<T> anterior = aux;
+	// // int i = 1;
+	// //
+	// // while ( aux != null && i < pos){
+	// //
+	// // i++;
+	// // anterior = aux;
+	// // aux = aux.getSiguiente();
+	// // }
+	// //
+	// // if ( i == pos && aux != null){
+	// //
+	// // anterior.setSiguiente(aux.getSiguiente());
+	// // return true;
+	// // }
+	// //
+	// // return false;
+	// // }
+
+	/*
+	 * Pregunta si la lista esta vacia.
+	 */
+	public boolean empty() {
+
+		return (this.primero == null);
+	}
+
+	/*
+	 * Busca un dato en la lista y devuelve su primera aparición
+	 */
+	public int buscar(T dato) {
+
+		// Si la lista esta vacia
+		if (this.empty()) {
+
+			return -1;
+		}
+
+		Nodo<T> aux = primero;
+		int i = 1;
+
+		// Busca el dato en la lista
+		while (aux != null && !dato.equals(aux.getData())) {
+
+			aux = aux.getSiguiente();
+			i++;
+		}
+
+		if (aux == null) {
+			// Si la variable "aux" es nula es porque no lo encontro
+			return -1;
+
+		} else {
+			// Si no es nula la variable "aux" es porque lo encontro en la
+			// posicion "i"
+
+			return i;
+		}
+	}
+
+	// public T buscar(int pos) {
+	//
+	// Nodo<T> aux = lista;
+	// int i = 1;
+	//
+	// while (i < pos && aux != null) {
+	//
+	// i++;
+	// aux = aux.getSiguiente();
+	// }
+	//
+	// if (aux == null) {
+	//
+	// return null;
+	// }
+	//
+	// if (i > pos) {
+	//
+	// return null;
+	// }
+	//
+	// if (i == pos) {
+	//
+	// return aux.getData();
+	// }
+	//
+	// return null;
+	// }
+
+	/*
+	 * Vacia la lista
+	 */
+	public void vaciar() {
+
+		primero = null;
+		ultimo = null;
+	}
 
 	public String toString() {
 
@@ -318,7 +307,7 @@ public class Lista<T> {
 		Lista<Integer> l = new Lista<Integer>();
 
 		l.push_front(new Integer(4));
-		
+
 		// l.push_front(new Integer(500));
 		// l.push_front(new Integer(5000));
 		// l.push_back(new Integer(5));
