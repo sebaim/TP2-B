@@ -251,17 +251,17 @@ public class Lista<T> {
 	}
 
 	/*
-	 * Busca un nodo por la posicion "pos" pasada por parametro,
-	 * y devuelve el dato que contiene. 
+	 * Busca un nodo por la posicion "pos" pasada por parametro, y devuelve el
+	 * dato que contiene.
 	 */
 	public T buscar(int pos) {
 
 		// Lista vacia
-		if( this.empty()){
-			
+		if (this.empty()) {
+
 			return null;
 		}
-		
+
 		Nodo<T> aux = primero;
 		int i = 1;
 
@@ -295,6 +295,30 @@ public class Lista<T> {
 
 		primero = null;
 		ultimo = null;
+	}
+
+	/*
+	 * Muestra el contenido del primer nodo
+	 */
+	public T mostrar_primero() {
+
+		if (!this.empty()) {
+			return primero.getData();
+		}
+
+		return null;
+	}
+
+	/*
+	 * Muestra el contenido del ultimo nodo
+	 */
+	public T mostrar_ultimo() {
+
+		if (!this.empty()) {
+			return ultimo.getData();
+		}
+
+		return null;
 	}
 
 	public String toString() {
