@@ -131,83 +131,90 @@ public class Lista<T> {
 		return retorno;
 	}
 
-	// /*
-	// * Elimina un elemento de un valor determinado.
-	// */
-	// public boolean remove(T dato) {
-	//
-	// Nodo<T> aux = lista;
-	// Nodo<T> ultimo = aux;
-	//
-	// while (aux != null && aux.getSiguiente() != null
-	// && !dato.equals(aux.getData())) {
-	//
-	// ultimo = aux;
-	// aux = aux.getSiguiente();
-	// }
-	//
-	// // Lista vacia
-	// if (lista == null) {
-	//
-	// return false;
-	// }
-	//
-	// // Se llego al final de lista sin encontrarlo
-	// if (aux == null) {
-	//
-	// return false;
-	// }
-	//
-	// // Se encontro el dato
-	// if (dato.equals(aux.getData())) {
-	//
-	// // si es el primero de la lista
-	// if (ultimo == aux) {
-	//
-	// lista = ultimo.getSiguiente();
-	// } else {
-	// ultimo.setSiguiente(aux.getSiguiente());
-	// }
-	// return true;
-	// }
-	//
-	// return false;
-	// }
-	//
-	// /*
-	// * invierte el orden de los elementos en la lista
-	// */
-	// // public void reverse(){
-	// //
-	// //
-	// // }
-	//
-	// // insert(posición, dato )//insertar
-	//
-	// /*
-	// * Eliminar por posición
-	// */
-	// // public boolean erase(int pos){
-	// //
-	// // Nodo<T> aux = lista;
-	// // Nodo<T> anterior = aux;
-	// // int i = 1;
-	// //
-	// // while ( aux != null && i < pos){
-	// //
-	// // i++;
-	// // anterior = aux;
-	// // aux = aux.getSiguiente();
-	// // }
-	// //
-	// // if ( i == pos && aux != null){
-	// //
-	// // anterior.setSiguiente(aux.getSiguiente());
-	// // return true;
-	// // }
-	// //
-	// // return false;
-	// // }
+	// invierte el orden de los elementos en la lista
+
+	public void reverse() {
+		Lista<T> lista = new Lista<T>();
+		while (!this.empty()) {
+			lista.push_front(this.pop_front());
+		}
+
+	}
+
+	// insertar en una posiion
+	public boolean insert(int posicion, T dato) {
+		Nodo<T> nuevo = new Nodo<T>();
+		nuevo.setData(dato);
+
+		Nodo<T> ant = this.primero;
+		Nodo<T> act = ant;
+
+		int contPos = 0;
+
+		while (act != null && contPos != posicion) {
+			ant = act;
+			act = act.getSiguiente();
+			contPos++;
+		}
+
+		if (contPos != posicion) // si no hay la cantidad de elementos para
+									// insertar en esa posicion
+			return false;
+
+		ant.setSiguiente(nuevo);
+		nuevo.setSiguiente(act);
+		return true;
+
+	}
+
+	// elimina de una posicion determinada
+	public boolean erase(int posicion) {
+		Nodo<T> ant = this.primero;
+		Nodo<T> act = ant;
+
+		int contPos = 0;
+
+		while (act != null && contPos != posicion) {
+			ant = act;
+			act = act.getSiguiente();
+			contPos++;
+		}
+
+		if (contPos != posicion) // si no hay la cant de elemenos para llegar a
+									// borrar en esa posicion
+			return false;
+
+		ant.setSiguiente(act.getSiguiente());
+
+		return true;
+
+	}
+
+	public boolean remove(T dato) {
+		if (this.primero == null)
+			return false;
+		Nodo<T> act = this.primero;
+		Nodo<T> ant = this.primero;
+
+		while (act != null && !act.getData().equals(dato)) {
+			ant = act;
+			act = act.getSiguiente();
+		}
+
+		if (act == null)// si no lo encontro
+			return false;
+
+		if (act == ant) // si es el primero
+			this.primero = act.getSiguiente();
+
+		if (act.getSiguiente() == null) // si es el ultimo
+			this.ultimo = ant;
+
+		ant.setSiguiente(act.getSiguiente());
+
+		return true;
+
+	}
 
 	/*
 	 * Pregunta si la lista esta vacia.
