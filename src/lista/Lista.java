@@ -353,7 +353,7 @@ public class Lista<T> {
 		// l.push_back(new Integer(5));
 
 		System.out.println(l.pop_front());
-		l.push_back(new Integer(5));
+		l.push_back(new Integer(6));
 		System.out.println(l);
 
 	}
