@@ -1,5 +1,12 @@
 19/05
 --sebastian
+	Actualice metricas, Active Metricas para el proyecto.
+	Para instalarlo:
+	Help/Install New Software/Work With
+	Ponen http://metrics.sourceforge.net/update
+	Le Dan Add
+	Y aparece abajo para instalar, dps lo agregan desde Window/ Show View/ Other
+--sebastian
 	Agregue clone
 	Fix de los metodos del checkin anterior, andan bien todos.
 	Agregue algunas pruebas en el main.
