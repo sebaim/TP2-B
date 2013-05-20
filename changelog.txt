@@ -1,5 +1,11 @@
 19/05
 --sebastian
+	Agregue clone
+	Fix de los metodos del checkin anterior, andan bien todos.
+	Agregue algunas pruebas en el main.
+	Borre clase Punto.
+	Agregue mis metricas
+--sebastian
 	Agrego metodos a la clase lista:
 	remove() Elimina un elemento de un valor determinado.
 	reverse() //invierte el orden de los elementos en la lista.

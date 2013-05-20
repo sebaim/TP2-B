@@ -132,12 +132,28 @@ public class Lista<T> {
 	}
 
 	// invierte el orden de los elementos en la lista
-
-	public void reverse() {
+	
+	public Lista<T> clone(){
 		Lista<T> lista = new Lista<T>();
-		while (!this.empty()) {
-			lista.push_front(this.pop_front());
+		Nodo <T> act = this.primero;
+		while (act != null)
+		{
+			lista.push_back(act.getData());
+			act = act.getSiguiente();
 		}
+		
+		return lista;
+		
+	}
+
+	public Lista<T> reverse() {
+		Lista<T> lista = new Lista<T>();
+		Lista<T> orig = this.clone();
+		while (!orig.empty()) {
+			lista.push_front(orig.pop_front());
+		}
+		
+		return lista;
 
 	}
 
@@ -149,7 +165,7 @@ public class Lista<T> {
 		Nodo<T> ant = this.primero;
 		Nodo<T> act = ant;
 
-		int contPos = 0;
+		int contPos = 1;
 
 		while (act != null && contPos != posicion) {
 			ant = act;
@@ -157,11 +173,13 @@ public class Lista<T> {
 			contPos++;
 		}
 
-		if (contPos != posicion) // si no hay la cantidad de elementos para
-									// insertar en esa posicion
+		if (contPos != posicion)// si no hay la cantidad de elementos para insertar en esa posicion
 			return false;
 
-		ant.setSiguiente(nuevo);
+		if (ant == act) // si va primero
+			this.primero = nuevo;
+		else
+			ant.setSiguiente(nuevo);
 		nuevo.setSiguiente(act);
 		return true;
 
@@ -172,7 +190,7 @@ public class Lista<T> {
 		Nodo<T> ant = this.primero;
 		Nodo<T> act = ant;
 
-		int contPos = 0;
+		int contPos = 1;
 
 		while (act != null && contPos != posicion) {
 			ant = act;
@@ -184,7 +202,10 @@ public class Lista<T> {
 									// borrar en esa posicion
 			return false;
 
-		ant.setSiguiente(act.getSiguiente());
+		if (ant == act) // si es el primero
+			this.primero = act.getSiguiente();
+		else
+			ant.setSiguiente(act.getSiguiente());
 
 		return true;
 
@@ -347,14 +368,37 @@ public class Lista<T> {
 		Lista<Integer> l = new Lista<Integer>();
 
 		l.push_front(new Integer(4));
+		l.push_front(new Integer(5));
+		l.push_front(new Integer(6));
+		l.push_back(new Integer(7));
+		System.out.println(l);
+		//l.reverse();
+		//System.out.println(l.reverse());
+		System.out.println(l);
+		
+		
+		System.out.println(l.reverse());
+		
+		l.remove (6);
+		l.remove (7);
+		
+		System.out.println(l);
+		
+		l.insert(3, new Integer(11));
+		
+		System.out.println(l);
+		
+		l.erase(3);
+		System.out.println(l);
+		System.out.println(l.reverse());
 
 		// l.push_front(new Integer(500));
 		// l.push_front(new Integer(5000));
 		// l.push_back(new Integer(5));
 
-		System.out.println(l.pop_front());
-		l.push_back(new Integer(6));
-		System.out.println(l);
+//		System.out.println(l.pop_front());
+//		l.push_back(new Integer(6));
+		
 
 	}
 }
