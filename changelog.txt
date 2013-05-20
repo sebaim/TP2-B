@@ -1,2 +1,12 @@
+19/05
+--sebastian
+	Agrego metodos a la clase lista:
+	remove() Elimina un elemento de un valor determinado.
+	reverse() //invierte el orden de los elementos en la lista.
+	insert(posición, dato )//insertar
+	erase() //Eliminar por posición
+	Borro Class Punto
+	
+18/05
 --sebastian
 	Elimine cosas del tp2 parte 1 y le cambie el nombre al proyecto, agrego archivo changelog para seguir mejor los cambios.
