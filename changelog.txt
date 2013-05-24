@@ -1,5 +1,9 @@
 24/5
 --Emiliano
+	Actualice las metricas para lista
+
+24/5
+--Emiliano
 	Agregue el diagrama de clase para los 4 casos.
 
 19/05
