@@ -1,6 +1,6 @@
 package cola;
 
-public interface ColaInterface<T> {
+public interface Cola<T> {
 
     public boolean empty();
 

@@ -2,7 +2,7 @@ package cola;
 
 import lista.Lista;
 
-public class ColaCL<T> implements ColaInterface<T> {
+public class ColaCL<T> implements Cola<T> {
 
 	Lista<T> cola;
 	
@@ -43,7 +43,7 @@ public class ColaCL<T> implements ColaInterface<T> {
 	
 	public static void main(String[] args) {
 
-		ColaInterface<Integer> c = new ColaCL<Integer>();
+		Cola<Integer> c = new ColaCL<Integer>();
 	}
 
 }

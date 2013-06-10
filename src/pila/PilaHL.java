@@ -2,7 +2,7 @@ package pila;
 
 import lista.Lista;
 
-public class PilaHL<T> extends Lista<T> implements PilaInterface<T> {
+public class PilaHL<T> extends Lista<T> implements Pila<T> {
 
 	@Override
 	public T peek() {
@@ -38,7 +38,7 @@ public class PilaHL<T> extends Lista<T> implements PilaInterface<T> {
 
 	public static void main(String[] args) {
 
-		PilaInterface<Integer> p = new PilaHL<Integer>();
+		Pila<Integer> p = new PilaHL<Integer>();
 		
 		System.out.println(p.empty());
 		System.out.println(p.peek());

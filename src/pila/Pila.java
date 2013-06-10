@@ -1,6 +1,6 @@
 package pila;
 
-public interface PilaInterface<T>{
+public interface Pila<T>{
 
 	public boolean empty();
 	

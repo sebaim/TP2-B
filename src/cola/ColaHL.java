@@ -2,7 +2,7 @@ package cola;
 
 import lista.Lista;
 
-public class ColaHL<T> extends Lista<T> implements ColaInterface<T> {
+public class ColaHL<T> extends Lista<T> implements Cola<T> {
 
 	@Override
 	public boolean empty(){
@@ -37,7 +37,7 @@ public class ColaHL<T> extends Lista<T> implements ColaInterface<T> {
 	
 	public static void main(String[] args) {
 
-		ColaInterface<Integer> c = new ColaHL<Integer>();
+		Cola<Integer> c = new ColaHL<Integer>();
 	}
 
 }

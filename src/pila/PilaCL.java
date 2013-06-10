@@ -2,7 +2,7 @@ package pila;
 
 import lista.Lista;
 
-public class PilaCL<T> implements PilaInterface<T>{
+public class PilaCL<T> implements Pila<T>{
 
 	private Lista<T> pila;
 	
@@ -46,7 +46,7 @@ public class PilaCL<T> implements PilaInterface<T>{
 	public static void main(String[] args) {
 
 
-		PilaInterface<Integer> p = new PilaCL<Integer>();
+		Pila<Integer> p = new PilaCL<Integer>();
 		
 		System.out.println(p.empty());
 		System.out.println(p.peek());
